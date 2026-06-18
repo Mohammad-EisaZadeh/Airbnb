@@ -1,0 +1,39 @@
+# Frontend
+frontend/node_modules
+frontend/.next
+frontend/out
+frontend/build
+
+# Backend
+backend/node_modules
+backend/dist
+backend/build
+backend/config.env
+.env
+.env.*
+# Environment files
+frontend/.env*
+backend/.env*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Coverage
+coverage
+
+# OS
+.DS_Store
+
+# Vercel
+.vercel
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vscode
+.vscode/
