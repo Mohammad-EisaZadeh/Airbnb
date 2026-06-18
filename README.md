@@ -40,7 +40,7 @@ flowchart LR
   API["Express API :5000"]
   DB["MongoDB"]
 
-  Browser -->|"GET /api/v1/home?city="| API
+  Browser -->|"GET /api/v1/home"| API
   API --> DB
 ```
 
