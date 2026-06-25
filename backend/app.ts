@@ -12,14 +12,26 @@ import globalErrorHandler from "./src/middleware/errorMiddleWare";
 import homeRouter from "./src/routes/homeRouter";
 
 const app: Application = express();
+const allowedOrigins = [
+  "http://localhost:3000",
 
+  "http://127.0.0.1:3000",
+
+  "https://your-frontend.vercel.app",
+];
 /* ---------------- SECURITY ---------------- */
 
 app.use(helmet());
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   }),
 );
