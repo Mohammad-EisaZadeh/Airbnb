@@ -10,10 +10,20 @@ process.on("uncaughtException", (err: Error) => {
 
 dotenv.config({ path: "./config.env" });
 
-const DB = process.env.DATABASE_LOCAL as string;
+const DB =
+  process.env.NODE_ENV === "production"
+    ? process.env.DATABASE
+    : process.env.DATABASE_LOCAL;
 
+if (!DB) {
+  throw new Error("Database connection string is not defined");
+}
 /* ---------------- DB CONNECT ---------------- */
-
+console.log("NODE_ENV =", process.env.NODE_ENV);
+console.log(
+  "Database =",
+  process.env.NODE_ENV === "production" ? "Atlas" : "Local",
+);
 mongoose
   .connect(DB)
   .then(() => {

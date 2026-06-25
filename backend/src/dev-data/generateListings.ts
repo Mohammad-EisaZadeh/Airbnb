@@ -40,8 +40,11 @@ const createListing = (index: number): ListingSeed => {
     badges: Math.random() > 0.7 ? [random(badges)] : undefined,
 
     location: {
-      lat: 35 + Math.random(),
-      lng: 51 + Math.random(),
+      type: "Point",
+      coordinates: [
+        51 + Math.random(), // longitude
+        35 + Math.random(), // latitude
+      ],
     },
 
     pricePerNight: Math.floor(Math.random() * 300) + 20,

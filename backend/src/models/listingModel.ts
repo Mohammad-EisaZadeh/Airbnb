@@ -49,12 +49,14 @@ const ListingSchema = new Schema(
     },
 
     location: {
-      lat: {
-        type: Number,
+      type: {
+        type: String,
+        enum: ["Point"],
         required: true,
+        default: "Point",
       },
-      lng: {
-        type: Number,
+      coordinates: {
+        type: [Number],
         required: true,
       },
     },
@@ -130,7 +132,7 @@ const ListingSchema = new Schema(
     timestamps: true,
   },
 );
-
+ListingSchema.index({ location: "2dsphere" });
 /* ---------------- TYPES ---------------- */
 
 export type Listing = InferSchemaType<typeof ListingSchema>;

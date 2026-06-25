@@ -7,8 +7,14 @@ import { ListingModel } from "../models/listingModel"; //
 
 dotenv.config({ path: path.join(__dirname, "../../config.env") });
 
-const DB = process.env.DATABASE_LOCAL as string;
+const DB =
+  process.env.NODE_ENV === "production"
+    ? process.env.DATABASE
+    : process.env.DATABASE_LOCAL;
 
+if (!DB) {
+  throw new Error("Database connection string is not defined");
+}
 /* ---------------- DB CONNECT ---------------- */
 
 mongoose

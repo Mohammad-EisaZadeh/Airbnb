@@ -18,8 +18,8 @@ export interface ListingSeed {
   address: string;
   badges?: Badge[];
   location: {
-    lat: number;
-    lng: number;
+    type: "Point";
+    coordinates: [number, number];
   };
   pricePerNight: number;
   currency: Currency;
