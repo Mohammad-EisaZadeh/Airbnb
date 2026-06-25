@@ -5,7 +5,7 @@ import ContentCarousel from "./_components/ui/ContentCarousel";
 import { useHomePage } from "@/features/hooks/useHomePage";
 
 export default function Home() {
-  const { data, isLoading } = useHomePage("Tehran");
+  const { data, isLoading } = useHomePage();
 
   if (isLoading) {
     return <div>Loading...</div>;

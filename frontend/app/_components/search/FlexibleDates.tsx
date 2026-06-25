@@ -5,8 +5,6 @@ import { useState } from "react";
 
 import { pillClass } from "./searchAccordionStyles";
 
-type FlexibleDatesProps = { variant: "desktop" | "mobile" };
-
 const durations = ["Weekend", "Week", "Month"];
 
 const months = [
@@ -31,10 +29,10 @@ function monthCardClass(selected: boolean) {
   ].join(" ");
 }
 
-export default function FlexibleDates({ variant }: FlexibleDatesProps) {
+export default function FlexibleDates() {
   const [stay, setStay] = useState("");
   const [picked, setPicked] = useState<string[]>([]);
-  const isDesktop = variant === "desktop";
+
   const toggleMonth = (name: string) => {
     setPicked((prev) =>
       prev.includes(name) ? prev.filter((m) => m !== name) : [...prev, name],
