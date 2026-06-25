@@ -12,30 +12,33 @@ import globalErrorHandler from "./src/middleware/errorMiddleWare";
 import homeRouter from "./src/routes/homeRouter";
 
 const app: Application = express();
-const allowedOrigins = [
-  "http://localhost:3000",
 
-  "http://127.0.0.1:3000",
-
-  "https://your-frontend.vercel.app",
-];
 /* ---------------- SECURITY ---------------- */
-
-app.use(helmet());
-
 app.use(
   cors({
     origin: (origin, callback) => {
+      const allowedOrigins = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://airbnb-neon-eight.vercel.app",
+      ];
       if (!origin) return callback(null, true);
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
-      return callback(new Error("Not allowed by CORS"));
+      return callback(null, false);
     },
     credentials: true,
   }),
 );
 
+app.use(helmet());
+
+/* ---------------- BODY PARSERS ---------------- */
+
+app.use(express.json({ limit: "10kb" }));
+app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+app.use(cookieParser());
 /* ---------------- RATE LIMIT ---------------- */
 
 app.use(
@@ -45,12 +48,6 @@ app.use(
     message: "Too many requests from this IP, please try again later.",
   }),
 );
-
-/* ---------------- BODY PARSERS ---------------- */
-
-app.use(express.json({ limit: "10kb" }));
-app.use(express.urlencoded({ extended: true, limit: "10kb" }));
-app.use(cookieParser());
 
 /* ---------------- DATA SANITIZATION ---------------- */
 
