@@ -10,7 +10,7 @@ import morgan from "morgan";
 import globalErrorHandler from "./src/middleware/errorMiddleWare";
 
 import homeRouter from "./src/routes/homeRouter";
-
+import settingRouter from "./src/routes/settingRouter";
 const app: Application = express();
 
 /* ---------------- SECURITY ---------------- */
@@ -64,6 +64,7 @@ app.use(morgan("dev"));
 /* ---------------- ROUTES ---------------- */
 
 app.use("/api/v1/home", homeRouter);
+app.use("/api/v1/settings", settingRouter);
 
 /* ---------------- 404 HANDLER ---------------- */
 

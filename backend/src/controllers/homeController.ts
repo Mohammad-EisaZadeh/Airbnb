@@ -11,6 +11,7 @@ const getHome = async (req: Request, res: Response) => {
     data,
   });
 };
+
 export default {
   getHome,
 };

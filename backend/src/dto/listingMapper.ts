@@ -24,7 +24,7 @@ export const toListingCardDTO = (
       currency: listing.currency,
     },
 
-    hostType: "individual", // چون host populate نشده
+    hostType: "individual",
 
     rating: {
       average: listing.rating?.average ?? 0,

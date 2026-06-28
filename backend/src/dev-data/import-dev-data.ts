@@ -1,9 +1,11 @@
 import fs from "fs";
+import path from "path";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import path from "path";
 
-import { ListingModel } from "../models/listingModel"; //
+import { ListingModel } from "../models/listingModel";
+import { LanguageRegionModel } from "../models/LanguageRegionModel";
+import { CurrencyModel } from "../models/currencyModel";
 
 dotenv.config({ path: path.join(__dirname, "../../config.env") });
 
@@ -15,12 +17,10 @@ const DB =
 if (!DB) {
   throw new Error("Database connection string is not defined");
 }
-/* ---------------- DB CONNECT ---------------- */
 
-mongoose
-  .connect(DB)
-  .then(() => console.log("DB Connection Successful!"))
-  .catch((err) => console.log("DB Connection Failed 💥", err));
+mongoose.connect(DB).then(() => {
+  console.log("DB Connection Successful!");
+});
 
 /* ---------------- READ JSON ---------------- */
 
@@ -28,15 +28,25 @@ const listings = JSON.parse(
   fs.readFileSync(path.join(__dirname, "listings.json"), "utf-8"),
 );
 
+const languageRegions = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "language-regions.json"), "utf-8"),
+);
+
+const currencies = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "currencies.json"), "utf-8"),
+);
+
 /* ---------------- IMPORT DATA ---------------- */
 
-const importData = async (): Promise<void> => {
+const importData = async () => {
   try {
-    await ListingModel.insertMany(listings, {});
+    await ListingModel.insertMany(listings);
+    await LanguageRegionModel.insertMany(languageRegions);
+    await CurrencyModel.insertMany(currencies);
 
-    console.log("Data Successfully Loaded In The Database");
+    console.log("✅ Data imported successfully.");
   } catch (err) {
-    console.log("Import Error 💥", err);
+    console.error(err);
   }
 
   process.exit();
@@ -44,13 +54,15 @@ const importData = async (): Promise<void> => {
 
 /* ---------------- DELETE DATA ---------------- */
 
-const deleteData = async (): Promise<void> => {
+const deleteData = async () => {
   try {
     await ListingModel.deleteMany();
+    await LanguageRegionModel.deleteMany();
+    await CurrencyModel.deleteMany();
 
-    console.log("Data Successfully Deleted From The Database");
+    console.log("✅ Data deleted successfully.");
   } catch (err) {
-    console.log("Delete Error 💥", err);
+    console.error(err);
   }
 
   process.exit();

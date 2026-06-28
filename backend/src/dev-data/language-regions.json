@@ -1,0 +1,572 @@
+[
+  {
+    "language": "English",
+    "country": "United States",
+    "locale": "en",
+    "country_override": "US"
+  },
+  {
+    "language": "Azərbaycan dili",
+    "country": "Azərbaycan",
+    "locale": "az",
+    "country_override": "AZ"
+  },
+  {
+    "language": "Bahasa Indonesia",
+    "country": "Indonesia",
+    "locale": "id",
+    "country_override": "ID"
+  },
+  {
+    "language": "Bosanski",
+    "country": "Bosna i Hercegovina",
+    "locale": "bs",
+    "country_override": "BA"
+  },
+  {
+    "language": "Català",
+    "country": "Espanya",
+    "locale": "ca",
+    "country_override": "ES"
+  },
+  {
+    "language": "Čeština",
+    "country": "Česká republika",
+    "locale": "cs",
+    "country_override": "CZ"
+  },
+  {
+    "language": "Crnogorski",
+    "country": "Crna Gora",
+    "locale": "sr-ME",
+    "country_override": "ME"
+  },
+  {
+    "language": "Dansk",
+    "country": "Danmark",
+    "locale": "da",
+    "country_override": "DK"
+  },
+  {
+    "language": "Deutsch",
+    "country": "Deutschland",
+    "locale": "de",
+    "country_override": "DE"
+  },
+  {
+    "language": "Deutsch",
+    "country": "Österreich",
+    "locale": "de-AT",
+    "country_override": "AT"
+  },
+  {
+    "language": "Deutsch",
+    "country": "Schweiz",
+    "locale": "de-CH",
+    "country_override": "CH"
+  },
+  {
+    "language": "Deutsch",
+    "country": "Luxemburg",
+    "locale": "de",
+    "country_override": "LU"
+  },
+  {
+    "language": "Eesti",
+    "country": "Eesti",
+    "locale": "et",
+    "country_override": "EE"
+  },
+  {
+    "language": "English",
+    "country": "Australia",
+    "locale": "en-AU",
+    "country_override": "AU"
+  },
+  {
+    "language": "English",
+    "country": "Canada",
+    "locale": "en-CA",
+    "country_override": "CA"
+  },
+  {
+    "language": "English",
+    "country": "Guyana",
+    "locale": "en",
+    "country_override": "GY"
+  },
+  {
+    "language": "English",
+    "country": "India",
+    "locale": "en-IN",
+    "country_override": "IN"
+  },
+  {
+    "language": "English",
+    "country": "Ireland",
+    "locale": "en-IE",
+    "country_override": "IE"
+  },
+  {
+    "language": "English",
+    "country": "New Zealand",
+    "locale": "en-NZ",
+    "country_override": "NZ"
+  },
+  {
+    "language": "English",
+    "country": "Singapore",
+    "locale": "en-SG",
+    "country_override": "SG"
+  },
+  {
+    "language": "English",
+    "country": "United Arab Emirates",
+    "locale": "en",
+    "country_override": "AE"
+  },
+  {
+    "language": "English",
+    "country": "United Kingdom",
+    "locale": "en-GB",
+    "country_override": "GB"
+  },
+  {
+    "language": "Español",
+    "country": "Argentina",
+    "locale": "es-AR",
+    "country_override": "AR"
+  },
+  {
+    "language": "Español",
+    "country": "Belice",
+    "locale": "es-XL",
+    "country_override": "BZ"
+  },
+  {
+    "language": "Español",
+    "country": "Bolivia",
+    "locale": "es-XL",
+    "country_override": "BO"
+  },
+  {
+    "language": "Español",
+    "country": "Chile",
+    "locale": "es-XL",
+    "country_override": "CL"
+  },
+  {
+    "language": "Español",
+    "country": "Colombia",
+    "locale": "es-XL",
+    "country_override": "CO"
+  },
+  {
+    "language": "Español",
+    "country": "Costa Rica",
+    "locale": "es-XL",
+    "country_override": "CR"
+  },
+  {
+    "language": "Español",
+    "country": "Ecuador",
+    "locale": "es-XL",
+    "country_override": "EC"
+  },
+  {
+    "language": "Español",
+    "country": "El Salvador",
+    "locale": "es-419",
+    "country_override": "SV"
+  },
+  {
+    "language": "Español",
+    "country": "España",
+    "locale": "es",
+    "country_override": "ES"
+  },
+  {
+    "language": "Español",
+    "country": "Estados Unidos",
+    "locale": "es-419",
+    "country_override": "US"
+  },
+  {
+    "language": "Español",
+    "country": "Guatemala",
+    "locale": "es-419",
+    "country_override": "GT"
+  },
+  {
+    "language": "Español",
+    "country": "Honduras",
+    "locale": "es-419",
+    "country_override": "HN"
+  },
+  {
+    "language": "Español",
+    "country": "Latinoamérica",
+    "locale": "es-XL",
+    "country_override": "CO"
+  },
+  {
+    "language": "Español",
+    "country": "México",
+    "locale": "es-419",
+    "country_override": "MX"
+  },
+  {
+    "language": "Español",
+    "country": "Nicaragua",
+    "locale": "es-419",
+    "country_override": "NI"
+  },
+  {
+    "language": "Español",
+    "country": "Panamá",
+    "locale": "es-419",
+    "country_override": "PA"
+  },
+  {
+    "language": "Español",
+    "country": "Paraguay",
+    "locale": "es-AR",
+    "country_override": "PY"
+  },
+  {
+    "language": "Español",
+    "country": "Perú",
+    "locale": "es-XL",
+    "country_override": "PE"
+  },
+  {
+    "language": "Español",
+    "country": "Venezuela",
+    "locale": "es-XL",
+    "country_override": "VE"
+  },
+  {
+    "language": "Français",
+    "country": "Belgique",
+    "locale": "fr-BE",
+    "country_override": "BE"
+  },
+  {
+    "language": "Français",
+    "country": "Canada",
+    "locale": "fr-CA",
+    "country_override": "CA"
+  },
+  {
+    "language": "Français",
+    "country": "France",
+    "locale": "fr",
+    "country_override": "FR"
+  },
+  {
+    "language": "Français",
+    "country": "Suisse",
+    "locale": "fr-CH",
+    "country_override": "CH"
+  },
+  {
+    "language": "Français",
+    "country": "Luxembourg",
+    "locale": "fr",
+    "country_override": "LU"
+  },
+  {
+    "language": "Gaeilge",
+    "country": "Éire",
+    "locale": "ga",
+    "country_override": "IE"
+  },
+  {
+    "language": "Hrvatski",
+    "country": "Hrvatska",
+    "locale": "hr",
+    "country_override": "US"
+  },
+  {
+    "language": "isiXhosa",
+    "country": "eMzantsi Afrika",
+    "locale": "xh",
+    "country_override": "ZA"
+  },
+  {
+    "language": "isiZulu",
+    "country": "iNingizimu Afrika",
+    "locale": "zu",
+    "country_override": "ZA"
+  },
+  {
+    "language": "Íslenska",
+    "country": "Ísland",
+    "locale": "is",
+    "country_override": "IS"
+  },
+  {
+    "language": "Italiano",
+    "country": "Italia",
+    "locale": "it",
+    "country_override": "IT"
+  },
+  {
+    "language": "Italiano",
+    "country": "Svizzera",
+    "locale": "it-CH",
+    "country_override": "CH"
+  },
+  {
+    "language": "Kiswahili",
+    "country": "Āfrika",
+    "locale": "sw",
+    "country_override": "US"
+  },
+  {
+    "language": "Latviešu",
+    "country": "Latvija",
+    "locale": "lv",
+    "country_override": "LV"
+  },
+  {
+    "language": "Lietuvių",
+    "country": "Lietuva",
+    "locale": "lt",
+    "country_override": "LT"
+  },
+  {
+    "language": "Magyar",
+    "country": "Magyarország",
+    "locale": "hu",
+    "country_override": "HU"
+  },
+  {
+    "language": "Malti",
+    "country": "Malta",
+    "locale": "mt",
+    "country_override": "MT"
+  },
+  {
+    "language": "Melayu",
+    "country": "Malaysia",
+    "locale": "ms",
+    "country_override": "MY"
+  },
+  {
+    "language": "Vlaams",
+    "country": "België",
+    "locale": "nl-BE",
+    "country_override": "BE"
+  },
+  {
+    "language": "Nederlands",
+    "country": "Nederland",
+    "locale": "nl",
+    "country_override": "NL"
+  },
+  {
+    "language": "Norsk",
+    "country": "Norge",
+    "locale": "no",
+    "country_override": "NO"
+  },
+  {
+    "language": "Polski",
+    "country": "Polska",
+    "locale": "pl",
+    "country_override": "PL"
+  },
+  {
+    "language": "Português",
+    "country": "Brasil",
+    "locale": "pt",
+    "country_override": "BR"
+  },
+  {
+    "language": "Português",
+    "country": "Portugal",
+    "locale": "pt-PT",
+    "country_override": "PT"
+  },
+  {
+    "language": "Română",
+    "country": "România",
+    "locale": "ro",
+    "country_override": "RO"
+  },
+  {
+    "language": "Shqip",
+    "country": "Shqipëri",
+    "locale": "sq",
+    "country_override": "AL"
+  },
+  {
+    "language": "Slovenčina",
+    "country": "Slovensko",
+    "locale": "sk",
+    "country_override": "SK"
+  },
+  {
+    "language": "Slovenščina",
+    "country": "Slovenija",
+    "locale": "sl",
+    "country_override": "SI"
+  },
+  {
+    "language": "Srpski",
+    "country": "Srbija",
+    "locale": "sr",
+    "country_override": "RS"
+  },
+  {
+    "language": "Suomi",
+    "country": "Suomi",
+    "locale": "fi",
+    "country_override": "FI"
+  },
+  {
+    "language": "Svenska",
+    "country": "Sverige",
+    "locale": "sv",
+    "country_override": "SE"
+  },
+  {
+    "language": "Tagalog",
+    "country": "Pilipinas",
+    "locale": "tl",
+    "country_override": "PH"
+  },
+  {
+    "language": "Tiếng Việt",
+    "country": "Việt Nam",
+    "locale": "vi",
+    "country_override": "VN"
+  },
+  {
+    "language": "Türkçe",
+    "country": "Türkiye",
+    "locale": "tr",
+    "country_override": "TR"
+  },
+  {
+    "language": "Ελληνικά",
+    "country": "Ελλάδα",
+    "locale": "el",
+    "country_override": "GR"
+  },
+  {
+    "language": "Български",
+    "country": "България",
+    "locale": "bg",
+    "country_override": "BG"
+  },
+  {
+    "language": "Македонски",
+    "country": "Северна Македонија",
+    "locale": "mk",
+    "country_override": "MK"
+  },
+  {
+    "language": "Русский",
+    "country": "Россия",
+    "locale": "ru",
+    "country_override": "RU"
+  },
+  {
+    "language": "Українська",
+    "country": "Україна",
+    "locale": "uk",
+    "country_override": "UA"
+  },
+  {
+    "language": "ქართული",
+    "country": "საქართველო",
+    "locale": "ka",
+    "country_override": "GE"
+  },
+  {
+    "language": "Հայերեն",
+    "country": "Հայաստան",
+    "locale": "hy",
+    "country_override": "AM"
+  },
+  {
+    "language": "עברית",
+    "country": "ישראל",
+    "locale": "he",
+    "country_override": "IL"
+  },
+  {
+    "language": "العربية",
+    "country": "العالم",
+    "locale": "ar",
+    "country_override": "US"
+  },
+  {
+    "language": "हिन्दी",
+    "country": "भारत",
+    "locale": "hi",
+    "country_override": "IN"
+  },
+  {
+    "language": "ಕನ್ನಡ",
+    "country": "ಭಾರತ",
+    "locale": "kn",
+    "country_override": "IN"
+  },
+  {
+    "language": "मराठी",
+    "country": "भारत",
+    "locale": "mr",
+    "country_override": "IN"
+  },
+  {
+    "language": "ไทย",
+    "country": "ประเทศไทย",
+    "locale": "th",
+    "country_override": "TH"
+  },
+  {
+    "language": "한국어",
+    "country": "대한민국",
+    "locale": "ko",
+    "country_override": "KR"
+  },
+  {
+    "language": "日本語",
+    "country": "日本",
+    "locale": "ja",
+    "country_override": "JP"
+  },
+  {
+    "language": "简体中文",
+    "country": "美国",
+    "locale": "zh",
+    "country_override": "US"
+  },
+  {
+    "language": "繁體中文",
+    "country": "美國",
+    "locale": "zh-TW",
+    "country_override": "US"
+  },
+  {
+    "language": "简体中文",
+    "country": "中国",
+    "locale": "zh-CN",
+    "country_override": "CN"
+  },
+  {
+    "language": "繁體中文",
+    "country": "香港",
+    "locale": "zh-HK",
+    "country_override": "HK"
+  },
+  {
+    "language": "繁體中文",
+    "country": "台灣",
+    "locale": "zh-TW",
+    "country_override": "TW"
+  }
+]
