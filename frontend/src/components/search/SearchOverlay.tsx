@@ -49,7 +49,7 @@ export default function SearchOverlay() {
 
         {!isDestinationExpanded && (
           <>
-            <ExploreCategories variant="searchOverlay" />
+            <ExploreCategories />
             <DialogClose asChild>
               <button type="button" className={closeButtonClass}>
                 <X className="size-5" />
