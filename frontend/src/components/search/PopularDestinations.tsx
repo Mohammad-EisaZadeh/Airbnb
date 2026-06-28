@@ -42,8 +42,8 @@ export default function PopularDestinations() {
   return (
     <div
       className={cn(
-        "relative flex min-h-0 flex-1 flex-col",
-        !isDestinationExpanded ? "overflow-y-scroll" : "overflow-hidden",
+        "relative flex max-h-[calc(100vh-140px)] min-h-0 flex-1 flex-col overflow-scroll",
+        isDestinationExpanded ? "overflow-y-scroll" : "overflow-hidden",
       )}
     >
       <span className="text-[12px]">Suggested destinations</span>

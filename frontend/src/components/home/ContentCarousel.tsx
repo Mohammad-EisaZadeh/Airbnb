@@ -44,7 +44,7 @@ export default function ContentCarousel({ title, items }: Props) {
             <AspectRatio ratio={20 / 19} className="relative">
               <Image
                 fill
-                src={"/images/1.jpeg"}
+                src={`${process.env.NODE_ENV === "development" ? "/images/1.jpeg" : el.coverImage}`}
                 alt={el.title}
                 className="rounded-[20px] object-cover"
               />

@@ -8,7 +8,7 @@ export default function HomeMain() {
   const { data, isLoading } = useHomePage();
 
   return (
-    <main className="3xl:max-w-480 mx-auto mt-13 flex h-full w-full max-w-360 flex-col gap-10">
+    <main className="3xl:max-w-480 mx-auto mt-13 flex max-w-360 flex-1 flex-col gap-10">
       {isLoading ? (
         <LoadingDots />
       ) : (

@@ -24,6 +24,8 @@ export default function DatePicker({ variant }: DatePickerProps) {
   const [monthCount, setMonthCount] = useState(variant === "desktop" ? 2 : 4);
   const [flex, setFlex] = useState("");
   const [month, setMonth] = useState(new Date());
+  const isDesktop = variant === "desktop";
+
   const goPrevMonth = () => {
     setMonth((prev) => {
       const d = new Date(prev);
@@ -44,15 +46,17 @@ export default function DatePicker({ variant }: DatePickerProps) {
       <div
         className={`flex ${variant === "desktop" ? "" : "max-h-75"} w-full flex-col overflow-y-auto`}
       >
-        <div className="flex items-center justify-between px-2 pb-2">
-          <button onClick={goPrevMonth}>
-            <ChevronLeft className="h-4 w-4" />
-          </button>
+        {isDesktop && (
+          <div className="flex items-center justify-between px-2 pb-2">
+            <button onClick={goPrevMonth}>
+              <ChevronLeft className="h-4 w-4" />
+            </button>
 
-          <button onClick={goNextMonth}>
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
+            <button onClick={goNextMonth}>
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        )}
         <DayPicker
           animate
           month={month}
