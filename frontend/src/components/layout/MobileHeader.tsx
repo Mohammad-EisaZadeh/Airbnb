@@ -20,7 +20,7 @@ export default function MobileHeader() {
           Start your search
         </span>
       </button>
-      <ExploreCategories variant="home" />
+      <ExploreCategories />
     </header>
   );
 }

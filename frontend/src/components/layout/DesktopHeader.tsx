@@ -51,7 +51,7 @@ export default function DesktopHeader() {
 
         {!isLoginPage && (
           <div className="flex flex-1 justify-center">
-            <ExploreCategories variant="home" />
+            <ExploreCategories />
           </div>
         )}
 
