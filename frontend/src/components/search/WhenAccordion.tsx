@@ -55,7 +55,7 @@ export default function WhenAccordion({
             {mode === DATE_SEARCH_MODE_OPTIONS[0] ? (
               <DatePicker variant="mobile" />
             ) : (
-              <FlexibleDates variant="mobile" />
+              <FlexibleDates />
             )}
           </div>
         </AccordionContent>
