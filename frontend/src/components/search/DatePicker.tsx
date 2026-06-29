@@ -74,7 +74,7 @@ export default function DatePicker({ variant }: DatePickerProps) {
             month: "w-full",
             month_grid: "w-full",
             day_button:
-              "text-[14px] w-full aspect-[45/43] flex items-center justify-center",
+              "text-[14px] w-full aspect-[45/43] flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-40 cursor-pointer",
             range_start:
               "bg-[#222222] !text-white rounded-l-[50px] rounded-bl-[50px]",
             range_end:

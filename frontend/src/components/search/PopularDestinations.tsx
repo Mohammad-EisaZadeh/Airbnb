@@ -5,6 +5,7 @@ import { useSearchUI } from "@/context/SearchUIContext";
 import type { SuggestedDestination } from "@/types/search";
 import Destination from "./Destination";
 import { cn } from "@/lib/utils";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 const destinations: SuggestedDestination[] = [
   { city: "Nearby", description: "Find what's around you" },
@@ -38,12 +39,12 @@ const destinations: SuggestedDestination[] = [
 
 export default function PopularDestinations() {
   const { isDestinationExpanded } = useSearchUI();
-
+  const isDesktop = useIsDesktop();
   return (
     <div
       className={cn(
         "relative flex max-h-[calc(100vh-140px)] min-h-0 flex-1 flex-col overflow-scroll",
-        isDestinationExpanded ? "overflow-y-scroll" : "overflow-hidden",
+        !isDestinationExpanded && !isDesktop && "overflow-hidden",
       )}
     >
       <span className="text-[12px]">Suggested destinations</span>

@@ -24,13 +24,20 @@ export default function SearchBar() {
 
   useEffect(() => {
     const handleMouseDown = (e: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      ) {
-        setActive(null);
+      const target = e.target as Node;
+
+      if (containerRef.current?.contains(target)) return;
+
+      const popovers = document.querySelectorAll(
+        "[data-radix-popper-content-wrapper]",
+      );
+      for (const popover of popovers) {
+        if (popover.contains(target)) return;
       }
+
+      setActive(null);
     };
+
     document.addEventListener("mousedown", handleMouseDown);
     return () => document.removeEventListener("mousedown", handleMouseDown);
   }, []);

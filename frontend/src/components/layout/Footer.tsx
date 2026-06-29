@@ -1,6 +1,8 @@
 "use client";
 import NextButton from "../home/CarouselNextButton";
 import PrevButton from "../home/CarouselPrevButton";
+import FooterSection from "../home/FooterSection";
+import FooterBottom from "../home/FooterBottom";
 import { Card, CardContent } from "../ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
@@ -27,6 +29,8 @@ export default function Footer() {
         <PrevButton />
         <NextButton />
       </Carousel>
+      <FooterSection />
+      <FooterBottom />
     </footer>
   );
 }

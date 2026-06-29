@@ -25,7 +25,7 @@ export default function ContentCarousel({ title, items }: Props) {
       <div className="flex items-center">
         <div className="flex w-full justify-between gap-2 md:justify-normal">
           <span className="text-lg font-bold">{title}</span>
-          <button className="flex size-7 items-center justify-center rounded-[14px] bg-[#f2f2f2]">
+          <button className="flex size-7 cursor-pointer items-center justify-center rounded-[14px] bg-[#f2f2f2]">
             <ArrowRight className="size-4 text-[#222222]" />
           </button>
         </div>

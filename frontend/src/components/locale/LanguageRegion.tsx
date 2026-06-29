@@ -1,22 +1,14 @@
 "use client";
 
 import { useLanguages } from "@/features/localization/hooks/useLanguages";
-import { LoadingDots } from "../ui/LoadingDots";
 import { useLocale } from "@/context/LocaleContext";
 import { Switch } from "../ui/switch";
 import { Languages } from "lucide-react";
+import { LoadingDots } from "../ui/LoadingDots";
 export default function LanguageRegion() {
   const { data, isLoading } = useLanguages();
-
-  const defaultLanguageId = data?.data[0]?._id;
-
   const { selectedLanguage, setSelectedLanguage } = useLocale();
-  const activeLanguage = selectedLanguage ?? defaultLanguageId;
-
-  if (isLoading) {
-    return <LoadingDots />;
-  }
-
+  if (isLoading) return <LoadingDots />;
   return (
     <>
       <div className="flex w-fit items-center self-start bg-[#f7f7f7] p-4">
@@ -37,9 +29,9 @@ export default function LanguageRegion() {
         {data?.data.map((el) => (
           <div
             key={el._id}
-            onClick={() => setSelectedLanguage(el._id)}
+            onClick={() => setSelectedLanguage(el)}
             className={`flex cursor-pointer flex-col rounded-[8px] border px-3 py-2.5 ${
-              activeLanguage === el._id
+              selectedLanguage === el
                 ? "border-[#222222]"
                 : "border-transparent"
             }`}

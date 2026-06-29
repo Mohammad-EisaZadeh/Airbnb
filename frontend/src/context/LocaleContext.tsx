@@ -2,33 +2,39 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
+import type { Currency, LanguageRegion } from "@/features/localization/types";
 interface LocaleContextType {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 
-  selectedLanguage: string | null;
-  setSelectedLanguage: React.Dispatch<React.SetStateAction<string | null>>;
+  selectedLanguage: LanguageRegion | null;
+  setSelectedLanguage: React.Dispatch<
+    React.SetStateAction<LanguageRegion | null>
+  >;
 
-  selectedCurrency: string | null;
-  setSelectedCurrency: React.Dispatch<React.SetStateAction<string | null>>;
+  selectedCurrency: Currency | null;
+  setSelectedCurrency: React.Dispatch<React.SetStateAction<Currency | null>>;
 }
 
 const LocaleContext = createContext<LocaleContextType | null>(null);
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
-  const [selectedCurrency, setSelectedCurrency] = useState<string | null>(null);
+
+  const [selectedLanguage, setSelectedLanguage] =
+    useState<LanguageRegion | null>(null);
+
+  const [selectedCurrency, setSelectedCurrency] = useState<Currency | null>(
+    null,
+  );
 
   return (
     <LocaleContext.Provider
       value={{
         isOpen,
         setIsOpen,
-
         selectedLanguage,
         setSelectedLanguage,
-
         selectedCurrency,
         setSelectedCurrency,
       }}
