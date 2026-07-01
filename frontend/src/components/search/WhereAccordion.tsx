@@ -59,7 +59,7 @@ export default function WhereAccordion({
           </AccordionTrigger>
         )}
 
-        <AccordionContent className="flex min-h-0 flex-1 flex-col overflow-scroll">
+        <AccordionContent className="flex min-h-0 flex-1 flex-col gap-3 overflow-scroll">
           <div className="flex h-13.5 items-stretch justify-between rounded-xl border border-[#DDDDDD] pr-5">
             {!isDestinationExpanded ? (
               <span className="flex h-full items-center p-6">

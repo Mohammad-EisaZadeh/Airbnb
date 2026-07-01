@@ -19,7 +19,7 @@ const overlayClass =
   "fixed inset-0 flex h-screen w-screen max-w-none translate-x-0 translate-y-0 flex-col gap-0  rounded-none border-0 bg-[#f5f5f5] p-0 shadow-none overflow-auto ";
 
 const closeButtonClass =
-  "absolute top-[3%] right-[3%] z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-transparent hover:bg-white";
+  "absolute top-[20px] right-[20px] z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-transparent hover:bg-white";
 
 export default function SearchOverlay() {
   const {
@@ -41,8 +41,8 @@ export default function SearchOverlay() {
   return (
     <Dialog open={isSearchOpen} onOpenChange={setSearchOpen}>
       <DialogContent
-        aria-describedby={undefined}
         showCloseButton={false}
+        aria-describedby={undefined}
         className={overlayClass}
       >
         <DialogTitle className="sr-only">Search</DialogTitle>

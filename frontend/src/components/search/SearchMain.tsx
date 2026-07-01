@@ -8,6 +8,7 @@ import WhenAccordion from "./WhenAccordion";
 import WhereAccordion from "./WhereAccordion";
 import WhoAccordion from "./WhoAccordion";
 import { Search } from "lucide-react";
+import { useFormContext } from "react-hook-form";
 
 export const PANELS = {
   WHERE: "panel1",
@@ -26,9 +27,16 @@ export default function SearchMain() {
     (id: string) => (_e: React.SyntheticEvent, next: boolean) => {
       if (next) setExpanded(id);
     };
+  const form = useFormContext();
 
+  const onSubmit = form.handleSubmit((data) => {
+    console.log("submit:", data);
+  });
   return (
-    <div className="flex h-full min-h-0 flex-col gap-3 p-3">
+    <form
+      onSubmit={onSubmit}
+      className="flex h-full min-h-0 flex-col gap-3 p-3"
+    >
       <WhereAccordion
         expanded={expanded === PANELS.WHERE}
         handleChange={openPanel(PANELS.WHERE)}
@@ -66,6 +74,6 @@ export default function SearchMain() {
           )}
         </div>
       )}
-    </div>
+    </form>
   );
 }

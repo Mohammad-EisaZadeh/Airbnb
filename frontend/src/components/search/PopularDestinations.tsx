@@ -45,7 +45,7 @@ export default function PopularDestinations() {
   return (
     <div
       className={cn(
-        "relative flex max-h-[calc(100vh-140px)] min-h-0 flex-1 flex-col overflow-scroll",
+        "relative flex max-h-[calc(100vh-140px)] min-h-0 flex-1 flex-col gap-3 overflow-scroll",
         !isDestinationExpanded && !isDesktop && "overflow-hidden",
       )}
     >
