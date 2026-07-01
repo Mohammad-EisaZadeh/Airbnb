@@ -37,14 +37,14 @@ export default function DesktopHeader() {
             width={102}
             height={80}
             alt="Airbnb Logo"
-            src="/images/logo.png"
+            src="/images/Logo.png"
             className="hidden lg:block"
           />
           <Image
             width={30}
             height={32}
             alt="Airbnb Logo"
-            src="/images/small-logo.png"
+            src="/images/Small-Logo.png"
             className="lg:hidden"
           />
         </Link>

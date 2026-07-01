@@ -4,14 +4,15 @@ import { useLanguages } from "@/features/localization/hooks/useLanguages";
 import { useLocale } from "@/context/LocaleContext";
 import { Switch } from "../ui/switch";
 import { Languages } from "lucide-react";
-import { LoadingDots } from "../ui/LoadingDots";
+
+import LanguageRegionSkeleton from "./LanguageRegionSkeleton";
 export default function LanguageRegion() {
   const { data, isLoading } = useLanguages();
   const { selectedLanguage, setSelectedLanguage } = useLocale();
-  if (isLoading) return <LoadingDots />;
+  if (isLoading) return <LanguageRegionSkeleton />;
   return (
     <>
-      <div className="flex w-fit items-center self-start bg-[#f7f7f7] p-4">
+      <div className="my-12 flex w-fit items-center self-start p-4">
         <div className="flex flex-col">
           <div className="flex">
             <span>Translation</span>
@@ -25,6 +26,7 @@ export default function LanguageRegion() {
         </div>
         <Switch />
       </div>
+      <h1 className="text-2xl">Choose a language and region</h1>
       <div className="grid grid-cols-2 gap-4 px-2 py-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {data?.data.map((el) => (
           <div

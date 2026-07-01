@@ -1,9 +1,10 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { SearchFormValues } from "@/lib/validations/search";
 import { Minus, Plus } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useFormContext, useWatch } from "react-hook-form";
 
 const guestTypes = [
   { key: "adults", title: "Adults", description: "Ages 13 or above" },
@@ -13,18 +14,20 @@ const guestTypes = [
 ] as const;
 type GuestKey = (typeof guestTypes)[number]["key"];
 export default function GuestSelector() {
-  const [guests, setGuests] = useState<Record<GuestKey, number>>({
-    adults: 0,
-    children: 0,
-    infants: 0,
-    pets: 0,
+  const { control, setValue } = useFormContext<SearchFormValues>();
+
+  const guests = useWatch({
+    control,
+    name: "guests",
   });
 
+  const totalGuests = guests.adults + guests.children;
+
   const updateCount = (key: GuestKey, delta: number) => {
-    setGuests((prev) => ({
-      ...prev,
-      [key]: Math.max(0, prev[key] + delta),
-    }));
+    setValue(`guests.${key}`, Math.max(0, guests[key] + delta), {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
   };
   return (
     <div className="flex flex-col">
@@ -52,7 +55,7 @@ export default function GuestSelector() {
                 type="button"
                 variant="ghost"
                 size="icon"
-                className="rounded-full bg-[#f2f2f2] hover:bg-[#f2f2f2] disabled:bg-[#f2f2f2]"
+                className="cursor-pointer rounded-full bg-[#f2f2f2] hover:bg-[#f2f2f2] disabled:bg-[#f2f2f2]"
                 onClick={() => updateCount(guest.key, -1)}
                 disabled={guests[guest.key] === 0}
                 aria-label={`Decrease ${guest.title}`}
@@ -64,7 +67,13 @@ export default function GuestSelector() {
                 type="button"
                 variant="ghost"
                 size="icon"
-                className="rounded-full bg-[#f2f2f2] hover:bg-[#f2f2f2] disabled:bg-[#f2f2f2]"
+                disabled={
+                  (guest.key === "pets" && guests.pets >= 5) ||
+                  (guest.key === "infants" && guests.infants >= 5) ||
+                  ((guest.key === "adults" || guest.key === "children") &&
+                    totalGuests >= 15)
+                }
+                className="cursor-pointer rounded-full bg-[#f2f2f2] hover:bg-[#f2f2f2] disabled:bg-[#f2f2f2]"
                 onClick={() => updateCount(guest.key, 1)}
                 aria-label={`Increase ${guest.title}`}
               >

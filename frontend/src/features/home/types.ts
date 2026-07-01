@@ -1,9 +1,4 @@
-import {
-  Badge,
-  Currency,
-  HostType,
-  ListingType,
-} from "@/types/listing";
+import { Badge, Currency, HostType, ListingType } from "@/types/listing";
 
 export interface ListingCardDTO {
   id: string;

@@ -3,12 +3,17 @@
 import { useState } from "react";
 
 import { useSearchUI } from "@/context/SearchUIContext";
-import { SEARCH_ACCORDION_PANELS as PANELS } from "@/types/search";
 
 import WhenAccordion from "./WhenAccordion";
 import WhereAccordion from "./WhereAccordion";
 import WhoAccordion from "./WhoAccordion";
 import { Search } from "lucide-react";
+
+export const PANELS = {
+  WHERE: "panel1",
+  WHEN: "panel2",
+  WHO: "panel3",
+} as const;
 
 export default function SearchMain() {
   const [expanded, setExpanded] = useState<string | false>("panel3");

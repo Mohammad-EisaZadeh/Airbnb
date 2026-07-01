@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { DATE_SEARCH_MODE_OPTIONS } from "@/types/search";
+
+export const DATE_SEARCH_MODE_OPTIONS = ["Dates", "Flexible dates"] as const;
 
 type SegmentedProps = {
   setOption: React.Dispatch<React.SetStateAction<string>>;

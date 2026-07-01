@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 
-import type { SuggestedDestination } from "@/types/search";
-
 const IMAGE_SIZE = 56;
 
 const cardClass =
@@ -12,7 +10,10 @@ const cardClass =
 export default function Destination({
   destination,
 }: {
-  destination: SuggestedDestination;
+  destination: {
+    city: string;
+    description: string;
+  };
 }) {
   return (
     <button type="button" className={cardClass}>

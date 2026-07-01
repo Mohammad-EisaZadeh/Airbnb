@@ -8,16 +8,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  DATE_SEARCH_MODE_OPTIONS,
-  type SearchAccordionProps,
-} from "@/types/search";
-
 import DatePicker from "./DatePicker";
 import FlexibleDates from "./FlexibleDates";
 import Segmented from "./Segmented";
 import { bindOpenChange, shellClass } from "./searchAccordionStyles";
-
+const DATE_SEARCH_MODE_OPTIONS = ["Dates", "Flexible dates"] as const;
+import type { SyntheticEvent } from "react";
+type SearchAccordionProps = {
+  expanded: boolean;
+  handleChange: (event: SyntheticEvent, isExpanded: boolean) => void;
+};
 export default function WhenAccordion({
   expanded,
   handleChange,

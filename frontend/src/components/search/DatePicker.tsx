@@ -2,28 +2,43 @@
 
 import { useState } from "react";
 import { DateRange, DayPicker } from "react-day-picker";
+import { useFormContext, useWatch } from "react-hook-form";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Separator } from "@/components/ui/separator";
-
 import { pillClass } from "./searchAccordionStyles";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { SearchFormValues } from "@/lib/validations/search";
 
 const flexibility = [
   "Exact dates",
-  "±1 day ",
+  "±1 day",
   "±2 days",
   "±3 days",
   "±7 days",
   "±14 days",
 ];
+
 type DatePickerProps = {
   variant: "desktop" | "mobile";
 };
+
 export default function DatePicker({ variant }: DatePickerProps) {
-  const [range, setRange] = useState<DateRange | undefined>();
+  const { control, setValue } = useFormContext<SearchFormValues>();
+
+  const dates = useWatch({
+    control,
+    name: "dates",
+  });
+
+  const range: DateRange | undefined = {
+    from: dates.checkIn ?? undefined,
+    to: dates.checkOut ?? undefined,
+  };
+
   const [monthCount, setMonthCount] = useState(variant === "desktop" ? 2 : 4);
   const [flex, setFlex] = useState("");
   const [month, setMonth] = useState(new Date());
+
   const isDesktop = variant === "desktop";
 
   const goPrevMonth = () => {
@@ -41,36 +56,58 @@ export default function DatePicker({ variant }: DatePickerProps) {
       return d;
     });
   };
+
   return (
     <div className="flex w-full flex-col">
       <div
-        className={`flex ${variant === "desktop" ? "" : "max-h-75"} w-full flex-col overflow-y-auto`}
+        className={`flex ${
+          variant === "desktop" ? "" : "max-h-75"
+        } w-full flex-col overflow-y-auto`}
       >
         {isDesktop && (
           <div className="flex items-center justify-between px-2 pb-2">
-            <button onClick={goPrevMonth}>
+            <button type="button" onClick={goPrevMonth}>
               <ChevronLeft className="h-4 w-4" />
             </button>
 
-            <button onClick={goNextMonth}>
+            <button type="button" onClick={goNextMonth}>
               <ChevronRight className="h-4 w-4" />
             </button>
           </div>
         )}
+
         <DayPicker
           animate
           month={month}
           onMonthChange={setMonth}
+          mode="range"
+          selected={range}
+          onSelect={(range) => {
+            setValue("dates.checkIn", range?.from ?? null, {
+              shouldDirty: true,
+              shouldValidate: true,
+            });
+
+            setValue("dates.checkOut", range?.to ?? null, {
+              shouldDirty: true,
+              shouldValidate: true,
+            });
+          }}
+          disabled={{ before: new Date() }}
+          numberOfMonths={monthCount}
+          hideNavigation
           modifiers={{ today: false }}
-          modifiersStyles={{ today: { color: "inherit" } }}
+          modifiersStyles={{
+            today: { color: "inherit" },
+          }}
           formatters={{
             formatWeekdayName: (date) =>
-              new Intl.DateTimeFormat("en-US", { weekday: "narrow" }).format(
-                date,
-              ),
+              new Intl.DateTimeFormat("en-US", {
+                weekday: "narrow",
+              }).format(date),
           }}
           classNames={{
-            months: `flex ${variant === "desktop" ? "flex-row gap-8" : "flex-col"} `,
+            months: `flex ${isDesktop ? "flex-row gap-8" : "flex-col"}`,
             month: "w-full",
             month_grid: "w-full",
             day_button:
@@ -81,12 +118,6 @@ export default function DatePicker({ variant }: DatePickerProps) {
               "bg-[#222222] text-white rounded-r-[50px] rounded-br-[50px]",
             range_middle: "bg-[#f7f7f7] text-[#222222]",
           }}
-          disabled={{ before: new Date() }}
-          numberOfMonths={monthCount}
-          hideNavigation
-          mode="range"
-          selected={range}
-          onSelect={setRange}
         />
 
         {monthCount <= 20 && variant === "mobile" && (
@@ -105,8 +136,8 @@ export default function DatePicker({ variant }: DatePickerProps) {
       <div className="flex min-h-8 min-w-13.5 items-center gap-2.5 overflow-scroll pt-2 pb-2.5 text-nowrap">
         {flexibility.map((option) => (
           <button
-            type="button"
             key={option}
+            type="button"
             onClick={() => setFlex(option)}
             className={pillClass(flex === option, "w-full px-3.5 py-2")}
           >

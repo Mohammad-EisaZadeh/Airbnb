@@ -2,11 +2,13 @@
 
 import { Separator } from "@/components/ui/separator";
 import { useSearchUI } from "@/context/SearchUIContext";
-import type { SuggestedDestination } from "@/types/search";
 import Destination from "./Destination";
 import { cn } from "@/lib/utils";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
-
+type SuggestedDestination = {
+  city: string;
+  description: string;
+};
 const destinations: SuggestedDestination[] = [
   { city: "Nearby", description: "Find what's around you" },
   { city: "Barcelona,Spain", description: "Popular beach destination" },

@@ -22,29 +22,21 @@ export interface Listing {
     type: "Point";
     coordinates: [number, number];
   };
-
   pricePerNight: number;
   currency: Currency;
-
   guests: number;
   bedrooms: number;
   beds: number;
   bathrooms: number;
-
   images: string[];
   coverImage?: string;
-
   host: Host;
-
   amenities: string[];
-
   isAvailable: boolean;
-
   rating: {
     average: number;
     count: number;
   };
-
   createdAt: string;
   updatedAt: string;
 }

@@ -11,12 +11,15 @@ import {
 import { Button } from "@/components/ui/button";
 
 import { useSearchUI } from "@/context/SearchUIContext";
-import type { SearchAccordionProps } from "@/types/search";
 
 import PopularDestinations from "./PopularDestinations";
 import { bindOpenChange, shellClass } from "./searchAccordionStyles";
 import { cn } from "@/lib/utils";
-
+import type { SyntheticEvent } from "react";
+type SearchAccordionProps = {
+  expanded: boolean;
+  handleChange: (event: SyntheticEvent, isExpanded: boolean) => void;
+};
 export default function WhereAccordion({
   expanded,
   handleChange,

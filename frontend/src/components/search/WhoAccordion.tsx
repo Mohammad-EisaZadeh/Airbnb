@@ -6,11 +6,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-import type { SearchAccordionProps } from "@/types/search";
-
 import { shellClass } from "./searchAccordionStyles";
 import GuestSelector from "./GuestSelector";
+import type { SyntheticEvent } from "react";
+type SearchAccordionProps = {
+  expanded: boolean;
+  handleChange: (event: SyntheticEvent, isExpanded: boolean) => void;
+};
 
 export default function WhoAccordion({
   expanded,
