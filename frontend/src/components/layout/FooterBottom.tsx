@@ -3,18 +3,19 @@
 import { useEffect } from "react";
 import { Globe } from "lucide-react";
 
-import { useLocale } from "@/context/LocaleContext";
+import { useLocale } from "@/features/localization/context/LocaleContext";
 import { useLanguages } from "@/features/localization/hooks/useLanguages";
 import { useCurrencies } from "@/features/localization/hooks/useCurrencies";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "../ui/button";
 
 export default function FooterBottom() {
   const { data: languages } = useLanguages();
   const { data: currencies } = useCurrencies();
+  const languagesData = languages?.data.languages;
+  const currenciesData = currencies?.data.currencies;
   const {
     selectedLanguage,
     setSelectedLanguage,
@@ -23,15 +24,15 @@ export default function FooterBottom() {
   } = useLocale();
 
   useEffect(() => {
-    if (!selectedLanguage && languages?.data.length) {
-      setSelectedLanguage(languages.data[0]);
+    if (!selectedLanguage && languagesData?.length) {
+      setSelectedLanguage(languagesData[0]);
     }
-    if (!selectedCurrency && currencies?.data.length) {
-      setSelectedCurrency(currencies.data[0]);
+    if (!selectedCurrency && currenciesData?.length) {
+      setSelectedCurrency(currenciesData[0]);
     }
   }, [
-    languages,
-    currencies,
+    currenciesData,
+    languagesData,
     selectedLanguage,
     setSelectedLanguage,
     selectedCurrency,
@@ -53,30 +54,30 @@ export default function FooterBottom() {
             <span>{selectedCurrency?.code}</span>
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <Button
-            variant="outline"
-            size="icon"
-            className="hover:bg[ cursor-pointer rounded-full border-none bg-transparent hover:bg-[#ebebeb]"
+        <div className="flex items-center gap-5">
+          <Link
+            href="https://www.facebook.com/airbnb"
+            target="_blank"
+            className="cursor-pointer rounded-full border-none bg-transparent hover:bg-[#ebebeb]"
           >
             <FaFacebook className="size-4" />
-          </Button>
+          </Link>
 
-          <Button
-            variant="outline"
-            size="icon"
-            className="hover:bg[ cursor-pointer rounded-full border-none bg-transparent hover:bg-[#ebebeb]"
+          <Link
+            href="https://x.com/airbnb"
+            target="_blank"
+            className="cursor-pointer rounded-full border-none bg-transparent hover:bg-[#ebebeb]"
           >
             <FaXTwitter className="size-4" />
-          </Button>
+          </Link>
 
-          <Button
-            variant="outline"
-            size="icon"
-            className="hover:bg[ cursor-pointer rounded-full border-none bg-transparent hover:bg-[#ebebeb]"
+          <Link
+            href="https://www.instagram.com/airbnb"
+            target="_blank"
+            className="cursor-pointer rounded-full border-none bg-transparent hover:bg-[#ebebeb]"
           >
             <FaInstagram className="size-4" />
-          </Button>
+          </Link>
         </div>
       </div>
       <div className="flex flex-row items-center gap-2 lg:order-first">

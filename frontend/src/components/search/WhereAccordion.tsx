@@ -10,11 +10,12 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
-import { useSearchUI } from "@/context/SearchUIContext";
+import { useSearchUI } from "@/features/search/context/SearchUIContext";
 
 import PopularDestinations from "./PopularDestinations";
-import { bindOpenChange, shellClass } from "./searchAccordionStyles";
+import { bindOpenChange, shellClass } from "@/lib/styles/searchAccordionStyles";
 import { cn } from "@/lib/utils";
+
 import type { SyntheticEvent } from "react";
 type SearchAccordionProps = {
   expanded: boolean;

@@ -1,7 +1,7 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-import { useSearchUI } from "@/context/SearchUIContext";
+import { useSearchUI } from "@/features/search/context/SearchUIContext";
 import Destination from "./Destination";
 import { cn } from "@/lib/utils";
 import { useIsDesktop } from "@/hooks/useIsDesktop";

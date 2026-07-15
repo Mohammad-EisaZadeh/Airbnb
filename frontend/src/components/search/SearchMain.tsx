@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { useSearchUI } from "@/context/SearchUIContext";
+import { useSearchUI } from "@/features/search/context/SearchUIContext";
 
 import WhenAccordion from "./WhenAccordion";
 import WhereAccordion from "./WhereAccordion";

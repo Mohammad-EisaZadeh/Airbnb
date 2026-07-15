@@ -3,7 +3,7 @@
 import { Search } from "lucide-react";
 
 import ExploreCategories from "./ExploreCategories";
-import { useSearchUI } from "@/context/SearchUIContext";
+import { useSearchUI } from "@/features/search/context/SearchUIContext";
 
 export default function MobileHeader() {
   const { setSearchOpen } = useSearchUI();

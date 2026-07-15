@@ -52,7 +52,7 @@ export const footerSections: FooterSection[] = [
 ];
 export default function FooterSection() {
   return (
-    <div className="mx-auto grid max-w-480 grid-cols-1 md:grid-cols-3">
+    <div className="mx-auto grid w-full max-w-480 grid-cols-1 md:grid-cols-3">
       {footerSections.map((section) => (
         <div
           className="flex flex-col gap-4 border-b border-[#dddddd] py-8"

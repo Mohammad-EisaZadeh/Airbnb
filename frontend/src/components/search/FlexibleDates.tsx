@@ -3,7 +3,7 @@
 import { Calendar } from "lucide-react";
 import { useState } from "react";
 
-import { pillClass } from "./searchAccordionStyles";
+import { pillClass } from "@/lib/styles/searchAccordionStyles";
 
 const durations = ["Weekend", "Week", "Month"];
 

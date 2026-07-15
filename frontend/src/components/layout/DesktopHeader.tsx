@@ -13,7 +13,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import UserMenu from "./UserMenu";
-import { useLocale } from "@/context/LocaleContext";
+import { useLocale } from "@/features/localization/context/LocaleContext";
 export default function DesktopHeader() {
   const pathname = usePathname();
   const isLoginPage = pathname === "/login";

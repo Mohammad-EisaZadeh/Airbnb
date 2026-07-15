@@ -106,7 +106,10 @@ function Carousel({
       api.off("reInit", update);
     };
   }, [api]);
-
+  React.useEffect(() => {
+    if (!api || !setApi) return;
+    setApi(api);
+  }, [api, setApi]);
   return (
     <CarouselContext.Provider
       value={{

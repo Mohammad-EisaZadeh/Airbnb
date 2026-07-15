@@ -6,6 +6,7 @@
 
 export interface ApiResponse<T> {
   status: "success" | "fail" | "error";
+  results: number;
   data: T;
 }
 
@@ -21,7 +22,9 @@ export interface Currency {
   createdAt: string;
   updatedAt: string;
 }
-
+export interface CurrenciesData {
+  currencies: Currency[];
+}
 /* =========================
  * Language Region
  * ========================= */
@@ -35,10 +38,13 @@ export interface LanguageRegion {
   createdAt: string;
   updatedAt: string;
 }
+export interface LanguagesData {
+  languages: LanguageRegion[];
+}
 
 /* =========================
  * API Response Types
  * ========================= */
 
-export type CurrenciesResponse = ApiResponse<Currency[]>;
-export type LanguagesResponse = ApiResponse<LanguageRegion[]>;
+export type LanguagesResponse = ApiResponse<LanguagesData>;
+export type CurrenciesResponse = ApiResponse<CurrenciesData>;

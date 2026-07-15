@@ -1,16 +1,16 @@
 import { useCurrencies } from "@/features/localization/hooks/useCurrencies";
 
-import { useLocale } from "@/context/LocaleContext";
-import { LoadingDots } from "../ui/LoadingDots";
+import { useLocale } from "@/features/localization/context/LocaleContext";
+import CurrencySkeleton from "./CurrencySkeleton";
 
 export default function Currency() {
   const { data, isLoading } = useCurrencies();
-
+  const currenciesData = data?.data.currencies;
   const { selectedCurrency, setSelectedCurrency } = useLocale();
-  if (isLoading) return <LoadingDots />;
+  if (isLoading) return <CurrencySkeleton />;
   return (
     <div className="grid grid-cols-2 gap-4 px-2 py-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-      {data?.data.map((el) => (
+      {currenciesData?.map((el) => (
         <div
           key={el._id}
           onClick={() => setSelectedCurrency(el)}

@@ -68,7 +68,7 @@ export default function LoginPage() {
             <div className="flex gap-3">
               <Button className="size-12 cursor-pointer border border-[#dddddd] bg-transparent hover:border-[#222] hover:bg-transparent">
                 <Image
-                  src="/icons/googleIcon.png"
+                  src="/icons/GoogleIcon.png"
                   alt="Google Icon"
                   width={20}
                   height={20}
@@ -76,7 +76,7 @@ export default function LoginPage() {
               </Button>
               <Button className="size-12 cursor-pointer border border-[#dddddd] bg-transparent hover:border-[#222] hover:bg-transparent">
                 <Image
-                  src="/icons/appleIcon.png"
+                  src="/icons/AppleIcon.png"
                   alt="Apple Icon"
                   width={20}
                   height={20}

@@ -6,7 +6,7 @@ import { useFormContext, useWatch } from "react-hook-form";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Separator } from "@/components/ui/separator";
-import { pillClass } from "./searchAccordionStyles";
+import { pillClass } from "@/lib/styles/searchAccordionStyles";
 import { SearchFormValues } from "@/lib/validations/search";
 
 const flexibility = [

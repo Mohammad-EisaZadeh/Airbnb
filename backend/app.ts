@@ -11,6 +11,7 @@ import globalErrorHandler from "./src/middleware/errorMiddleWare";
 
 import homeRouter from "./src/routes/homeRouter";
 import settingRouter from "./src/routes/settingRouter";
+import listingRouter from "./src/routes/listingRouter";
 const app: Application = express();
 
 /* ---------------- SECURITY ---------------- */
@@ -65,7 +66,7 @@ app.use(morgan("dev"));
 
 app.use("/api/v1/home", homeRouter);
 app.use("/api/v1/settings", settingRouter);
-
+app.use("/api/v1/room", listingRouter);
 /* ---------------- 404 HANDLER ---------------- */
 
 app.all(/.*/, (req: Request, res: Response) => {

@@ -10,7 +10,7 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useSearchUI } from "@/context/SearchUIContext";
+import { useSearchUI } from "@/features/search/context/SearchUIContext";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 import SearchMain from "./SearchMain";

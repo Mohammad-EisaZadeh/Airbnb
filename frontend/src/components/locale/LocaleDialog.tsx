@@ -1,5 +1,5 @@
 "use client";
-import { useLocale } from "@/context/LocaleContext";
+import { useLocale } from "@/features/localization/context/LocaleContext";
 import {
   Dialog,
   DialogClose,

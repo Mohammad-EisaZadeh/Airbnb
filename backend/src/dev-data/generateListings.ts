@@ -2,7 +2,7 @@ import { writeFileSync } from "fs";
 import {
   Badge,
   Currency,
-  ListingSeed,
+  Listing,
   ListingType,
   HostType,
 } from "../types/listing";
@@ -26,7 +26,7 @@ const uuid = () => Math.random().toString(36).substring(2, 10);
 
 /* ---------------- SEED DATA ---------------- */
 
-const createListing = (index: number): ListingSeed => {
+const createListing = (index: number): Listing => {
   const city = random(cities);
 
   return {
@@ -58,6 +58,15 @@ const createListing = (index: number): ListingSeed => {
     images: [
       `https://picsum.photos/400/300?random=${index}`,
       `https://picsum.photos/401/300?random=${index}`,
+      `https://picsum.photos/402/300?random=${index}`,
+      `https://picsum.photos/403/300?random=${index}`,
+      `https://picsum.photos/404/300?random=${index}`,
+      `https://picsum.photos/405/300?random=${index}`,
+      `https://picsum.photos/406/300?random=${index}`,
+      `https://picsum.photos/407/300?random=${index}`,
+      `https://picsum.photos/408/300?random=${index}`,
+      `https://picsum.photos/409/300?random=${index}`,
+      `https://picsum.photos/410/300?random=${index}`,
     ],
 
     coverImage: `https://picsum.photos/500/300?random=${index}`,
@@ -78,7 +87,7 @@ const createListing = (index: number): ListingSeed => {
 
 /* ---------------- GENERATE ---------------- */
 
-export const generateListings = (count = 2000): ListingSeed[] => {
+export const generateListings = (count = 2000): Listing[] => {
   return Array.from({ length: count }, (_, i) => createListing(i + 1));
 };
 

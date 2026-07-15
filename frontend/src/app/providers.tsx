@@ -1,8 +1,8 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { SearchUIProvider } from "@/context/SearchUIContext";
-import { LocaleProvider } from "@/context/LocaleContext";
+import { SearchUIProvider } from "@/features/search/context/SearchUIContext";
+import { LocaleProvider } from "@/features/localization/context/LocaleContext";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { FormProvider } from "react-hook-form";
 import { useSearchForm } from "@/features/search/hooks/useSearchForm";

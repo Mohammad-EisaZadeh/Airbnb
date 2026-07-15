@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { shellClass } from "./searchAccordionStyles";
+import { shellClass } from "@/lib/styles/searchAccordionStyles";
 import GuestSelector from "./GuestSelector";
 import type { SyntheticEvent } from "react";
 type SearchAccordionProps = {

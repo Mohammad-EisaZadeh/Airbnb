@@ -9,7 +9,7 @@ export type HostSeed = {
   type: HostType;
 };
 
-export interface ListingSeed {
+export interface Listing {
   title: string;
   description: string;
   type: ListingType;

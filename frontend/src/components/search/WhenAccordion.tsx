@@ -11,7 +11,7 @@ import {
 import DatePicker from "./DatePicker";
 import FlexibleDates from "./FlexibleDates";
 import Segmented from "./Segmented";
-import { bindOpenChange, shellClass } from "./searchAccordionStyles";
+import { bindOpenChange, shellClass } from "@/lib/styles/searchAccordionStyles";
 const DATE_SEARCH_MODE_OPTIONS = ["Dates", "Flexible dates"] as const;
 import type { SyntheticEvent } from "react";
 type SearchAccordionProps = {
